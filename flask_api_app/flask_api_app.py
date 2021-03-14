@@ -11,8 +11,14 @@ col = db['data']
 
 
 @app.route("/articles")
-def test():
+def all_articles():
     dataList = list(col.find({}, {'_id': False}))
+    return render_template('index.html', title="Articles", articlesjson=json.dumps(dataList))
+
+
+@app.route('/articles/<string:search_name>')
+def search_articles(search_name):
+    dataList = list(col.find({'description': {"$regex": search_name}}, {'_id': False}))
     return render_template('index.html', title="Articles", articlesjson=json.dumps(dataList))
 
 
