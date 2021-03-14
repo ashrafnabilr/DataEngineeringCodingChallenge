@@ -18,7 +18,7 @@ def all_articles():
 
 @app.route('/articles/<string:search_name>')
 def search_articles(search_name):
-    dataList = list(col.find({'description': {"$regex": search_name}}, {'_id': False}))
+    dataList = list(col.find({'description': {"$regex": search_name, "$options": "-i"}}, {'_id': False}))
     return render_template('index.html', title="Articles", articlesjson=json.dumps(dataList))
 
 
