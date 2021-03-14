@@ -21,3 +21,10 @@ The goal of this coding challenge is to create a solution that crawls for articl
 - A client at the beginning has to be created by `MongoClient()` class that takes the `user_name`, `password`,  `cluster_name` and `database_name`.
 - Please make sure for this step that the `user_name` and the `password` have been removed form the code and add as environment variables in the system (for security purposes), so if you intend to use the same code, please make sure to add yours.
 - Finally to access those data form the database, a restful API has been created to `GET` those information. Since the  system isn't too complex, I decided to use `Flask` instead of `Django` framework for simplicity. So, a new API url has been created `http://localhost:8000/articles` which will return the data in `Json` format rendered in HTML view (just for better visualization).
+- `Bouns Point`: a new rest API in Flask has been added to let the user fetch articles with specific keyword in order not read all the articles. The new API `http://127.0.0.1:8000/articles/<search_word>` for example if we want to search about `covid`, we can use `http://127.0.0.1:8000/articles/covid` url.
+
+## Folder structure
+- articles: includes the Scrapy project.
+- flask_api_app: includes the Flask rest API app.
+- .gitignore: git ignore file to remove unneeded files/folders from being committed by mistake.
+- README: read me file that shows how the whole application is working 
