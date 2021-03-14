@@ -11,7 +11,8 @@ The goal of this coding challenge is to create a solution that crawls for articl
 
 
 ## Specifications
-- At the beginning, a scrapy project has been created using "" command. This "articles" project will be the base scrapy project that can include several scarpy spiders. Each spider can be assigned to specific news website. For example, in our case here, only one spider has been created for the [theguardian.com](http://theguardian.com) website using the command "".
+- At the beginning, a scrapy project has been created using "scrapy startproject articles" command. This "articles" project will be the base scrapy project that can include several scarpy spiders. Each spider can be assigned to specific news website. For example, in our case here, only one spider has been created for the [theguardian.com](http://theguardian.com) website.
+- The Scrapy project can run through this command `scrapy crawl articles`
 - Of course, we can extend the project in the future to add several spiders each one map to different news website.
 - In the `parse()` function in the `TheguardianSpider()` class, we have to define how data should be parsed and cleaned.
 - I used the `rss` version that is provided by `theguardian.com` instead of the default website since it will facilitate a lot while fetching, parsing and handling the data from the website. The `rss` version does not include Ads. or any unrelated items that will be take time to parse and eliminate. 
